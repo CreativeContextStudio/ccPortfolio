@@ -52,7 +52,7 @@ export default function AboutPage() {
       >
         <Panel variant="bordered" headerVariant="accent" title="SUMMARY">
           <p className="text-sm leading-relaxed text-text font-mono">
-            Producer and creator building production systems that work at any scale, from boutique creative direction to distributed teams producing 100+ assets weekly. Combines 18+ years of traditional, brand, and broadcast experience (network television, Fortune 500 campaigns, film) with hands-on expertise in physical production with teams and crews all over the globe. Expertise concepting narrative content, optimizing video, directing talent, solving technical problems, and building automated operations and content systems. Equally comfortable with generative AI tools, context engineering, and agentic workflows. Works remotely from anywhere on projects anywhere.
+            Producer and creator building production systems that work at any scale, from boutique creative direction to distributed teams producing 100+ assets weekly. Combines 18+ years of traditional, brand, and broadcast experience (network television, Fortune 500 campaigns, film) with hands-on expertise in physical production with teams and crews all over the globe. Expertise concepting narrative content, optimizing video, directing talent, solving technical problems, and building automated operations and content systems. Equally comfortable with generative AI tools, context engineering, and agentic workflows. Works remotely from anywhere on projects everywhere.
           </p>
         </Panel>
       </motion.div>

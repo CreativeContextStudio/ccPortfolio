@@ -11,7 +11,7 @@ export default function ThemeSelector() {
     if (typeof document !== 'undefined') {
       const checkTheme = () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
-        setIsNeobrutalism(currentTheme === 'neobrutalism');
+        setIsNeobrutalism(currentTheme === 'hiya');
       };
       checkTheme();
       const observer = new MutationObserver(checkTheme);
@@ -21,7 +21,7 @@ export default function ThemeSelector() {
   }, []);
 
   const themes: { value: Theme; label: string }[] = [
-    { value: 'neobrutalism', label: 'Neobrutalism' },
+    { value: 'hiya', label: 'Hiya' },
     { value: 'dieter-rams', label: 'Deiter Herman' },
     { value: 'miami-vibes', label: 'Miami Vibes' },
     { value: 'lofi-wave', label: 'Lofi Wave' },

@@ -124,7 +124,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme="hiya"
+      data-mode="light"
+      suppressHydrationWarning
+    >
       <body
         className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${dmSans.variable} ${jetBrainsMono.variable} antialiased`}
       >

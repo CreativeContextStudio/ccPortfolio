@@ -175,9 +175,9 @@
   color: #000000 !important;
 }
 
-/* Neobrutalism Theme - Light Mode (Default) */
-[data-theme="neobrutalism"][data-mode="light"],
-[data-theme="neobrutalism"] {
+/* Hiya Theme (formerly Neobrutalism) - Light Mode (Default) */
+[data-theme="hiya"][data-mode="light"],
+[data-theme="hiya"] {
   --theme-primary: #ff006e;
   --theme-background: #fffef5;
   --theme-text: #1a1a1a;
@@ -192,8 +192,8 @@
   --theme-done: #70e000;
 }
 
-/* Neobrutalism Theme - Dark Mode */
-[data-theme="neobrutalism"][data-mode="dark"] {
+/* Hiya Theme (formerly Neobrutalism) - Dark Mode */
+[data-theme="hiya"][data-mode="dark"] {
   --theme-primary: #ff006e;
   --theme-background: #1a1a1a;
   --theme-text: #fffef5;
@@ -209,10 +209,10 @@
 }
 
 /* ============================================================================
-   Neobrutalism Component Styles - Comprehensive Site-wide Application
+   Hiya Component Styles - Comprehensive Site-wide Application
    ============================================================================ */
 
-/* Neobrutalism uses same fonts as other themes - no font overrides needed */
+/* Hiya uses same fonts as other themes - no font overrides needed */
 
 /* Universal Cards & Panels - Neobrutal borders and shadows for all themes */
 [class*="Panel"],
@@ -236,7 +236,7 @@ button:not([class*="border-0"]):not([class*="border-none"]) {
   transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
-[data-theme="neobrutalism"] button:not([class*="border-0"]):not([class*="border-none"]) {
+[data-theme="hiya"] button:not([class*="border-0"]):not([class*="border-none"]) {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.025em !important;
@@ -272,7 +272,7 @@ select {
   transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
-/* Neobrutalism inputs use default font-family */
+/* Hiya inputs use default font-family */
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -286,22 +286,22 @@ select:focus {
   border-color: var(--theme-primary) !important;
 }
 
-/* Neobrutalism Links */
-[data-theme="neobrutalism"] a {
+/* Hiya Links */
+[data-theme="hiya"] a {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-[data-theme="neobrutalism"] a:hover {
+[data-theme="hiya"] a:hover {
   text-decoration-thickness: 3px;
 }
 
-/* Neobrutalism Badges & Stamps */
-[data-theme="neobrutalism"] [class*="badge"],
-[data-theme="neobrutalism"] [class*="Badge"],
-[data-theme="neobrutalism"] [class*="Stamp"],
-[data-theme="neobrutalism"] [class*="stamp"] {
+/* Hiya Badges & Stamps */
+[data-theme="hiya"] [class*="badge"],
+[data-theme="hiya"] [class*="Badge"],
+[data-theme="hiya"] [class*="Stamp"],
+[data-theme="hiya"] [class*="stamp"] {
   border-width: 2px !important;
   border-color: var(--theme-text) !important;
   font-weight: 700 !important;
@@ -314,33 +314,33 @@ nav {
   border-bottom-color: var(--theme-text) !important;
 }
 
-[data-theme="neobrutalism"] nav a {
+[data-theme="hiya"] nav a {
   font-weight: 700;
   letter-spacing: 0.05em;
 }
 
-/* Neobrutalism Scrollbar */
-[data-theme="neobrutalism"] ::-webkit-scrollbar {
+/* Hiya Scrollbar */
+[data-theme="hiya"] ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
 
-[data-theme="neobrutalism"] ::-webkit-scrollbar-track {
+[data-theme="hiya"] ::-webkit-scrollbar-track {
   background: var(--theme-background);
   border: 2px solid var(--theme-text);
 }
 
-[data-theme="neobrutalism"] ::-webkit-scrollbar-thumb {
+[data-theme="hiya"] ::-webkit-scrollbar-thumb {
   background: var(--theme-text);
   border: 2px solid var(--theme-text);
 }
 
-[data-theme="neobrutalism"] ::-webkit-scrollbar-thumb:hover {
+[data-theme="hiya"] ::-webkit-scrollbar-thumb:hover {
   background: var(--theme-secondary);
 }
 
 /* Universal Select Elements - Neobrutal styling */
-[data-theme="neobrutalism"] select {
+[data-theme="hiya"] select {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.025em !important;
@@ -382,10 +382,10 @@ select:hover {
   border-color: var(--theme-text) !important;
 }
 
-[data-theme="neobrutalism"] [class*="badge"],
-[data-theme="neobrutalism"] [class*="Badge"],
-[data-theme="neobrutalism"] [class*="Stamp"],
-[data-theme="neobrutalism"] [class*="stamp"] {
+[data-theme="hiya"] [class*="badge"],
+[data-theme="hiya"] [class*="Badge"],
+[data-theme="hiya"] [class*="Stamp"],
+[data-theme="hiya"] [class*="stamp"] {
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -395,8 +395,8 @@ select:hover {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Neobrutalism specific transitions - faster, bouncy */
-[data-theme="neobrutalism"] * {
+/* Hiya specific transitions - faster, bouncy */
+[data-theme="hiya"] * {
   transition: background-color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), 
               color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), 
               border-color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -410,7 +410,7 @@ body {
   font-family: var(--font-family-sans);
 }
 
-/* Neobrutalism uses same fonts as other themes */
+/* Hiya uses same fonts as other themes */
 
 /* Accessibility: Skip to content link */
 .sr-only {

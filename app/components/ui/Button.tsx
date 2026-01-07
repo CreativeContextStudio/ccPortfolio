@@ -68,7 +68,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     if (typeof document !== 'undefined') {
       const checkTheme = () => {
         const theme = document.documentElement.getAttribute('data-theme');
-        setIsNeobrutalism(theme === 'neobrutalism');
+        setIsNeobrutalism(theme === 'hiya');
       };
       checkTheme();
       const observer = new MutationObserver(checkTheme);

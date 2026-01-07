@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 
-export type Theme = 'neobrutalism' | 'dieter-rams' | 'miami-vibes' | 'lofi-wave';
+export type Theme = 'hiya' | 'dieter-rams' | 'miami-vibes' | 'lofi-wave';
 export type Mode = 'light' | 'dark' | 'system';
 
 interface ThemeContextType {
@@ -32,7 +32,7 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ 
   children, 
-  defaultTheme = 'neobrutalism',
+  defaultTheme = 'hiya',
   defaultMode = 'system'
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme);
@@ -68,10 +68,20 @@ export function ThemeProvider({
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
-    const storedTheme = localStorage.getItem('theme') as Theme | null;
+    const storedTheme = localStorage.getItem('theme');
     const storedMode = localStorage.getItem('mode') as Mode | null;
     
-    if (storedTheme && (storedTheme === 'neobrutalism' || storedTheme === 'dieter-rams' || storedTheme === 'miami-vibes' || storedTheme === 'lofi-wave')) {
+    // Backward-compat: 'neobrutalism' was renamed to 'hiya'
+    if (storedTheme === 'neobrutalism') {
+      localStorage.setItem('theme', 'hiya');
+      setThemeState('hiya');
+    } else if (
+      storedTheme &&
+      (storedTheme === 'hiya' ||
+        storedTheme === 'dieter-rams' ||
+        storedTheme === 'miami-vibes' ||
+        storedTheme === 'lofi-wave')
+    ) {
       setThemeState(storedTheme);
     }
     
