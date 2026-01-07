@@ -1,0 +1,621 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font Families */
+  --font-family-sans: var(--font-space-grotesk), sans-serif;
+  --font-family-mono: var(--font-ibm-plex-mono), monospace;
+  
+  /* Theme Colors - These will be overridden by CSS variables */
+  --color-primary: var(--theme-primary);
+  --color-background: var(--theme-background);
+  --color-text: var(--theme-text);
+  --color-accent: var(--theme-accent);
+  --color-secondary: var(--theme-secondary);
+  --color-success: var(--theme-success);
+  --color-warning: var(--theme-warning);
+  --color-muted: var(--theme-muted);
+  
+  /* Legacy color names for backward compatibility */
+  --color-cream: var(--theme-background);
+  --color-black: var(--theme-text);
+  --color-orange: var(--theme-primary);
+  --color-blue: var(--theme-accent);
+  --color-gray: var(--theme-secondary);
+  --color-green: var(--theme-success);
+  --color-red: var(--theme-warning);
+  --color-tan: var(--theme-muted);
+}
+
+/* Theme CSS Custom Properties */
+:root {
+  /* Neobrutalism Theme - Light Mode (Default) */
+  --theme-primary: #ff006e;
+  --theme-background: #fffef5;
+  --theme-text: #1a1a1a;
+  --theme-accent: #00b4d8;
+  --theme-secondary: #4a4a4a;
+  --theme-success: #70e000;
+  --theme-warning: #ffd60a;
+  --theme-muted: #ffffff;
+  --theme-danger: #ff5400;
+  --theme-pending: #ffd60a;
+  --theme-progress: #00b4d8;
+  --theme-done: #70e000;
+  
+  /* Neobrutalism Shadows */
+  --shadow-neo-sm: 2px 2px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-md: 4px 4px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-lg: 6px 6px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-xl: 8px 8px 0px rgba(0, 0, 0, 1);
+  
+  /* Neobrutalism Transitions */
+  --transition-neo-fast: 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-neo-normal: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Dieter Rams Theme - Light Mode (Fallback) */
+  --theme-primary-rams: #FF6B35;
+  --theme-background-rams: #F5F3ED;
+  --theme-text-rams: #1A1A1A;
+  --theme-accent-rams: #2E5266;
+  --theme-secondary-rams: #7A7A7A;
+  --theme-success-rams: #4A7C59;
+  --theme-warning-rams: #C1440E;
+  --theme-muted-rams: #D4C5B9;
+  
+  /* Theme-aware Tailwind colors */
+  --color-primary: var(--theme-primary);
+  --color-background: var(--theme-background);
+  --color-text: var(--theme-text);
+  --color-accent: var(--theme-accent);
+  --color-secondary: var(--theme-secondary);
+  --color-success: var(--theme-success);
+  --color-warning: var(--theme-warning);
+  --color-muted: var(--theme-muted);
+  
+  /* Legacy color names for backward compatibility */
+  --color-cream: var(--theme-background);
+  --color-black: var(--theme-text);
+  --color-orange: var(--theme-primary);
+  --color-blue: var(--theme-accent);
+  --color-gray: var(--theme-secondary);
+  --color-green: var(--theme-success);
+  --color-red: var(--theme-warning);
+  --color-tan: var(--theme-muted);
+}
+
+/* Dieter Rams Theme - Light Mode */
+[data-theme="dieter-rams"][data-mode="light"],
+[data-theme="dieter-rams"] {
+  --theme-primary: #FF6B35;
+  --theme-background: #F5F3ED;
+  --theme-text: #1A1A1A;
+  --theme-accent: #2E5266;
+  --theme-secondary: #7A7A7A;
+  --theme-success: #4A7C59;
+  --theme-warning: #C1440E;
+  --theme-muted: #D4C5B9;
+}
+
+/* Dieter Rams Theme - Dark Mode */
+[data-theme="dieter-rams"][data-mode="dark"] {
+  --theme-primary: #FF6B35;
+  --theme-background: #1A1A1A;
+  --theme-text: #F5F3ED;
+  --theme-accent: #4A7C59;
+  --theme-secondary: #7A7A7A;
+  --theme-success: #4A7C59;
+  --theme-warning: #FF6B35;
+  --theme-muted: #2E5266;
+}
+
+/* Miami Vibes Theme - Light Mode */
+[data-theme="miami-vibes"][data-mode="light"],
+[data-theme="miami-vibes"] {
+  --theme-primary: #FF1493;
+  --theme-background: #FFFFFF;
+  --theme-text: #0A0E27;
+  --theme-accent: #00FFFF;
+  --theme-secondary: #0080FF;
+  --theme-success: #39FF14;
+  --theme-warning: #FFD700;
+  --theme-muted: #E0E0E0;
+}
+
+/* Miami Vibes Theme - Dark Mode */
+[data-theme="miami-vibes"][data-mode="dark"] {
+  --theme-primary: #FF1493;
+  --theme-background: #0A0E27;
+  --theme-text: #FFFFFF;
+  --theme-accent: #00FFFF;
+  --theme-secondary: #0051A3;
+  --theme-success: #39FF14;
+  --theme-warning: #FFD700;
+  --theme-muted: #1A1A3A;
+}
+
+/* Lofi Wave Theme - Light Mode */
+[data-theme="lofi-wave"][data-mode="light"],
+[data-theme="lofi-wave"] {
+  --theme-primary: #A78BFA;
+  --theme-background: #F5F1FF;
+  --theme-text: #2D1B3D;
+  --theme-accent: #F9A8D4;
+  --theme-secondary: #6B7280;
+  --theme-success: #86EFAC;
+  --theme-warning: #FBBF24;
+  --theme-muted: #E9D5FF;
+}
+
+/* Lofi Wave Theme - Dark Mode */
+[data-theme="lofi-wave"][data-mode="dark"] {
+  --theme-primary: #C4B5FD;
+  --theme-background: #1E1B2E;
+  --theme-text: #F3E8FF;
+  --theme-accent: #F9A8D4;
+  --theme-secondary: #9CA3AF;
+  --theme-success: #86EFAC;
+  --theme-warning: #FBBF24;
+  --theme-muted: #3B2F4F;
+}
+
+/* Text color overrides for accent backgrounds */
+/* Miami Vibes: Black text on blue (accent) backgrounds */
+[data-theme="miami-vibes"] .bg-accent,
+[data-theme="miami-vibes"] [class*="bg-accent"],
+[data-theme="miami-vibes"] .bg-accent.text-background,
+[data-theme="miami-vibes"] [class*="bg-accent"].text-background {
+  color: #000000 !important;
+}
+
+/* Lofi Wave: Black text on pink (accent) backgrounds */
+[data-theme="lofi-wave"] .bg-accent,
+[data-theme="lofi-wave"] [class*="bg-accent"],
+[data-theme="lofi-wave"] .bg-accent.text-background,
+[data-theme="lofi-wave"] [class*="bg-accent"].text-background {
+  color: #000000 !important;
+}
+
+/* Neobrutalism Theme - Light Mode (Default) */
+[data-theme="neobrutalism"][data-mode="light"],
+[data-theme="neobrutalism"] {
+  --theme-primary: #ff006e;
+  --theme-background: #fffef5;
+  --theme-text: #1a1a1a;
+  --theme-accent: #00b4d8;
+  --theme-secondary: #4a4a4a;
+  --theme-success: #70e000;
+  --theme-warning: #ffd60a;
+  --theme-muted: #ffffff;
+  --theme-danger: #ff5400;
+  --theme-pending: #ffd60a;
+  --theme-progress: #00b4d8;
+  --theme-done: #70e000;
+}
+
+/* Neobrutalism Theme - Dark Mode */
+[data-theme="neobrutalism"][data-mode="dark"] {
+  --theme-primary: #ff006e;
+  --theme-background: #1a1a1a;
+  --theme-text: #fffef5;
+  --theme-accent: #00b4d8;
+  --theme-secondary: #7a7a7a;
+  --theme-success: #70e000;
+  --theme-warning: #ffd60a;
+  --theme-muted: #2a2a2a;
+  --theme-danger: #ff5400;
+  --theme-pending: #ffd60a;
+  --theme-progress: #00b4d8;
+  --theme-done: #70e000;
+}
+
+/* ============================================================================
+   Neobrutalism Component Styles - Comprehensive Site-wide Application
+   ============================================================================ */
+
+/* Neobrutalism uses same fonts as other themes - no font overrides needed */
+
+/* Universal Cards & Panels - Neobrutal borders and shadows for all themes */
+[class*="Panel"],
+.neo-card {
+  border-width: 2px !important;
+  border-color: var(--theme-text) !important;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15) !important;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+[class*="Panel"]:hover,
+.neo-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Universal Buttons - Neobrutal borders and shadows for all themes */
+button:not([class*="border-0"]):not([class*="border-none"]) {
+  border-width: 2px !important;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15) !important;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+[data-theme="neobrutalism"] button:not([class*="border-0"]):not([class*="border-none"]) {
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+}
+
+button:hover:not(:disabled):not([class*="border-0"]):not([class*="border-none"]) {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+button:active:not(:disabled):not([class*="border-0"]):not([class*="border-none"]) {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+button:disabled:not([class*="border-0"]):not([class*="border-none"]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Universal Inputs & Textareas - Neobrutal borders and shadows for all themes */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  border-width: 2px !important;
+  border-color: var(--theme-text) !important;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Neobrutalism inputs use default font-family */
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--theme-primary) !important;
+}
+
+/* Neobrutalism Links */
+[data-theme="neobrutalism"] a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+[data-theme="neobrutalism"] a:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* Neobrutalism Badges & Stamps */
+[data-theme="neobrutalism"] [class*="badge"],
+[data-theme="neobrutalism"] [class*="Badge"],
+[data-theme="neobrutalism"] [class*="Stamp"],
+[data-theme="neobrutalism"] [class*="stamp"] {
+  border-width: 2px !important;
+  border-color: var(--theme-text) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+/* Universal Navigation - Neobrutal borders for all themes */
+nav {
+  border-bottom-width: 2px !important;
+  border-bottom-color: var(--theme-text) !important;
+}
+
+[data-theme="neobrutalism"] nav a {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Neobrutalism Scrollbar */
+[data-theme="neobrutalism"] ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="neobrutalism"] ::-webkit-scrollbar-track {
+  background: var(--theme-background);
+  border: 2px solid var(--theme-text);
+}
+
+[data-theme="neobrutalism"] ::-webkit-scrollbar-thumb {
+  background: var(--theme-text);
+  border: 2px solid var(--theme-text);
+}
+
+[data-theme="neobrutalism"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-secondary);
+}
+
+/* Universal Select Elements - Neobrutal styling */
+[data-theme="neobrutalism"] select {
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+}
+
+select:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Universal Modal/Dialog - Neobrutal borders and shadows for all themes */
+[role="dialog"],
+[class*="Modal"],
+[class*="modal"] {
+  border-width: 3px !important;
+  border-color: var(--theme-text) !important;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Universal Project Cards - Neobrutal borders and shadows for all themes */
+[class*="Card"]:not([class*="border-0"]):not([class*="border-none"]),
+[class*="card"]:not([class*="border-0"]):not([class*="border-none"]) {
+  border-width: 2px !important;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15) !important;
+}
+
+[class*="Card"]:hover:not([class*="border-0"]):not([class*="border-none"]),
+[class*="card"]:hover:not([class*="border-0"]):not([class*="border-none"]) {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Universal Badges & Stamps - Neobrutal borders for all themes */
+[class*="badge"]:not([class*="border-0"]):not([class*="border-none"]),
+[class*="Badge"]:not([class*="border-0"]):not([class*="border-none"]),
+[class*="Stamp"]:not([class*="border-0"]):not([class*="border-none"]),
+[class*="stamp"]:not([class*="border-0"]):not([class*="border-none"]) {
+  border-width: 2px !important;
+  border-color: var(--theme-text) !important;
+}
+
+[data-theme="neobrutalism"] [class*="badge"],
+[data-theme="neobrutalism"] [class*="Badge"],
+[data-theme="neobrutalism"] [class*="Stamp"],
+[data-theme="neobrutalism"] [class*="stamp"] {
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Neobrutalism specific transitions - faster, bouncy */
+[data-theme="neobrutalism"] * {
+  transition: background-color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              border-color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body {
+  background: var(--theme-background);
+  color: var(--theme-text);
+  font-family: var(--font-family-sans);
+}
+
+/* Neobrutalism uses same fonts as other themes */
+
+/* Accessibility: Skip to content link */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Enhanced focus indicators for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Focus indicator for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users (keep for keyboard users) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure sufficient color contrast for all text */
+.text-secondary {
+  color: var(--theme-secondary);
+  /* WCAG AA compliant contrast ratio */
+}
+
+.text-muted {
+  color: var(--theme-muted);
+  /* Ensure sufficient contrast for readability */
+}
+
+/* 3D Shape Animations */
+@keyframes rotate-x {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotate-y {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate-z {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-x-y {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes rotate-x-z {
+  from {
+    transform: rotateX(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-y-z {
+  from {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-x-y-z {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* News ticker animation - very slow, smooth crawl */
+.ticker-container {
+  animation: ticker-scroll 720s linear infinite;
+  width: max-content;
+}
+
+/* Reduced motion support for news ticker */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-container {
+    animation: none !important;
+  }
+}
+
+.shape-3d-container {
+  perspective: 1000px;
+}
+
+.shape-3d-wrapper {
+  transform-style: preserve-3d;
+}
+
+/* Responsive Design Utilities */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Orientation-specific adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Compact layouts for landscape mobile */
+  .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Touch target improvements */
+@media (pointer: coarse) {
+  /* Larger touch targets on touch devices */
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improved text readability on small screens */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
