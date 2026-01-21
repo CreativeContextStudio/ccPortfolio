@@ -6,7 +6,14 @@
 import { Resend } from 'resend';
 import { logger } from './logger';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization - only create Resend client when needed (at runtime, not build time)
+function getResendClient(): Resend | null {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return null;
+  }
+  return new Resend(apiKey);
+}
 
 export interface ContactEmailData {
   name: string;
@@ -22,7 +29,8 @@ export async function sendContactNotification(
   data: ContactEmailData
 ): Promise<{ success: boolean; error?: string }> {
   // Skip if Resend API key is not configured
-  if (!process.env.RESEND_API_KEY) {
+  const resend = getResendClient();
+  if (!resend) {
     logger.warn('RESEND_API_KEY not configured, skipping email notification');
     return { success: false, error: 'Email service not configured' };
   }
