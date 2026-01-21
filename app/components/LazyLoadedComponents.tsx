@@ -3,8 +3,8 @@
 import dynamic from 'next/dynamic';
 
 // Lazy load components that aren't needed immediately
-export const AgentQueryInterface = dynamic(() => import('./AgentQueryInterface'), {
-  ssr: false, // Uses browser-only APIs (localStorage, etc.)
+export const Chatbot = dynamic(() => import('./Chatbot'), {
+  ssr: false, // Uses browser-only APIs (sessionStorage, etc.)
 });
 
 export const EasterEggManager = dynamic(() => import('./EasterEggManager'), {

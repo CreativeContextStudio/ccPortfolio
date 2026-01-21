@@ -44,7 +44,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
       return (
         <div className="min-h-screen flex items-center justify-center p-4">
-          <Panel variant="bordered" headerVariant="warning" title="SYSTEM ERROR">
+          <Panel variant="bordered" headerVariant="primary" title="SYSTEM ERROR">
             <div className="space-y-4">
               <p className="text-sm font-mono text-warning">
                 An unexpected error occurred. Please try refreshing the page.

@@ -619,3 +619,35 @@ select:focus-visible {
     font-size: 16px; /* Prevent zoom on iOS */
   }
 }
+
+/* Chatbot scrollbar styling */
+.chatbot-messages::-webkit-scrollbar {
+  width: 12px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure chatbot messages container is scrollable */
+.chatbot-messages {
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chatbot-messages::-webkit-scrollbar {
+  display: block !important;
+  width: 12px !important;
+}

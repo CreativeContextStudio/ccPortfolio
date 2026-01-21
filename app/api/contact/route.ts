@@ -9,6 +9,8 @@ import {
   isValidLength,
 } from '@/lib/sanitize';
 import { createErrorResponse, createSuccessResponse } from '@/lib/apiResponse';
+import { saveContactSubmission } from '@/lib/db/contact';
+import { sendContactNotification } from '@/lib/email';
 
 export async function POST(req: NextRequest) {
   try {
@@ -92,39 +94,48 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // In a real application, you would send an email here using a service like:
-    // - Resend (https://resend.com)
-    // - SendGrid (https://sendgrid.com)
-    // - AWS SES
-    // - Nodemailer with SMTP
+    // Get IP address and user agent for security tracking
+    const ipAddress = getClientIdentifier(req);
+    const userAgent = req.headers.get('user-agent') || undefined;
 
-    // Log submission in development only (never logs user data in production)
-    logger.log('Contact form submission received', {
-      timestamp: new Date().toISOString(),
-    });
-
-    // For production, uncomment and configure email service:
-    /*
-    const { Resend } = require('resend');
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    
-    const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: process.env.CONTACT_EMAIL || 'your-email@example.com',
-      subject: `New message from ${name}`,
-      text: `From: ${name} (${email})\n\n${message}`,
-    });
-    
-    if (error) {
+    // Save submission to database
+    try {
+      await saveContactSubmission({
+        name,
+        email,
+        message,
+        ipAddress,
+        userAgent,
+      });
+    } catch (dbError) {
+      // Database error - log but return generic error to client
+      logger.error('Failed to save contact submission to database:', dbError);
       return NextResponse.json(
-        { error: error.message },
-        { status: 400 }
-      );
+        {
+          error: 'INTERNAL_ERROR',
+          message: 'An internal error occurred. Please try again later.',
+        },
+        { status: 500 }
+      ) as NextResponse;
     }
-    */
 
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Send email notification (non-blocking - don't fail if email fails)
+    try {
+      const emailResult = await sendContactNotification({
+        name,
+        email,
+        message,
+        ipAddress,
+      });
+      
+      if (!emailResult.success) {
+        // Log email failure but don't fail the request (data is already saved)
+        logger.warn('Failed to send contact notification email:', emailResult.error);
+      }
+    } catch (emailError) {
+      // Log email error but continue (data is already saved to database)
+      logger.error('Error sending contact notification email:', emailError);
+    }
 
     return NextResponse.json(
       {

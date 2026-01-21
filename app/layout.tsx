@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import SkipToContent from "./components/SkipToContent";
-import { AgentQueryInterface, EasterEggManager } from "./components/LazyLoadedComponents";
+import { Chatbot, EasterEggManager } from "./components/LazyLoadedComponents";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const spaceGrotesk = Space_Grotesk({
@@ -141,7 +141,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <AgentQueryInterface />
+            <Chatbot />
             <EasterEggManager />
           </ThemeProvider>
         </ErrorBoundary>

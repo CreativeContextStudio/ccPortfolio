@@ -29,7 +29,7 @@ export function createErrorResponse(
   const body: ApiError = {
     error,
     message,
-    ...(details && { details }),
+    ...(details !== undefined && { details }),
   };
 
   return new Response(JSON.stringify(body), {
@@ -51,8 +51,8 @@ export function createSuccessResponse<T>(
 ): Response {
   const body: ApiSuccess<T> = {
     success: true,
-    ...(data && { data }),
-    ...(message && { message }),
+    ...(data !== undefined && { data }),
+    ...(message !== undefined && { message }),
   };
 
   return new Response(JSON.stringify(body), {
