@@ -110,8 +110,14 @@ export const metadata: Metadata = {
   category: "Portfolio",
   classification: "Portfolio Website",
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/favicon.png', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.png',
   },
   other: {
     "application-name": "Creative Context Portfolio",
