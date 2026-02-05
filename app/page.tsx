@@ -2,6 +2,7 @@ import DramaticPageLoad from './components/DramaticPageLoad';
 import HeroPanel from './components/HeroPanel';
 import MissionBriefing from './components/MissionBriefing';
 import SignalDecoder from './components/SignalDecoder';
+import { CreativeContextStory } from './components/StudioLabAnimations';
 
 export default function Home() {
 
@@ -54,6 +55,18 @@ export default function Home() {
               lineCount={7}
               autoStart={true}
             />
+          </div>
+
+          {/* Creative Context Story */}
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <div className="border-2 border-current/20 bg-muted/5 p-4 sm:p-6">
+              <p className="text-xs font-mono uppercase tracking-wider text-secondary mb-4 opacity-70">
+                OPERATIONAL HISTORY ▸ EVOLUTION TIMELINE
+              </p>
+              <div className="w-full overflow-hidden">
+                <CreativeContextStory className="w-full h-auto min-h-[150px] sm:min-h-[180px] md:min-h-[200px]" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

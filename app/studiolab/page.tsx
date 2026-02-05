@@ -5,6 +5,13 @@ import { motion } from 'framer-motion';
 import { Panel } from '../components/ui';
 import StudioLabDetailModal from '../components/StudioLabDetailModal';
 import { studioLabProjects, StudioLabProject } from '../data/studioLabProjects';
+import {
+  BartenderFriendAnimation,
+  ContentCreatorAnimation,
+  ContentManagementAnimation,
+  MotionTrackingAnimation,
+  WebGLExperimentsAnimation,
+} from '../components/StudioLabAnimations';
 
 export default function StudioLabPage() {
   const [selectedProject, setSelectedProject] = useState<StudioLabProject | null>(null);
@@ -47,55 +54,11 @@ export default function StudioLabPage() {
         {/* Active Projects */}
         <Panel variant="bordered" headerVariant="primary" title="ACTIVE PROJECTS">
           <div className="space-y-4 py-6">
-            {/* Bartender Friend - TODO: Add entrance animation class */}
-            <motion.a
-              href="https://bartender-friend.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Content Creator */}
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="block group"
-            >
-              <div className="flex items-start gap-4 p-4 border border-current/20 bg-muted/5 hover:bg-muted/10 hover:border-current/30 transition-all cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 border border-current/20 bg-primary/10 flex items-center justify-center font-mono text-xs">
-                  BF
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-sm font-mono font-semibold text-text group-hover:text-primary transition-colors">
-                      bartenderFriend
-                    </h3>
-                    <span className="text-xs font-mono text-secondary">→</span>
-                  </div>
-                  <p className="text-xs font-mono text-secondary leading-relaxed">
-                    A pocket reference for classic recipes, modern techniques, and industry standards.
-                    Build faster, smarter, and with confidence.
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
-                      COCKTAILS
-                    </span>
-                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
-                      RECIPES
-                    </span>
-                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
-                      TRAINING
-                    </span>
-                  </div>
-                </div>
-                {/* TODO: Add project screenshot */}
-                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 flex items-center justify-center hidden sm:flex">
-                  <span className="text-xs font-mono text-secondary/50">IMG</span>
-                </div>
-              </div>
-            </motion.a>
-
-            {/* Content Creator - TODO: Add entrance animation class */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
               className="block group cursor-pointer"
               onClick={() => handleOpenModal('contentCreator')}
             >
@@ -130,18 +93,17 @@ export default function StudioLabPage() {
                     </span>
                   </div>
                 </div>
-                {/* TODO: Add project screenshot */}
-                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
-                {/* TODO: Add CSS animation */}
-                <div className="flex-shrink-0 w-16 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
+                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex items-center justify-center overflow-hidden">
+                  <ContentCreatorAnimation />
+                </div>
               </div>
             </motion.div>
 
-            {/* Content Management Platform - TODO: Add entrance animation class */}
+            {/* Content Management Platform */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="block group cursor-pointer"
               onClick={() => handleOpenModal('contentManagement')}
             >
@@ -173,12 +135,54 @@ export default function StudioLabPage() {
                     </span>
                   </div>
                 </div>
-                {/* TODO: Add project screenshot */}
-                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
-                {/* TODO: Add CSS animation */}
-                <div className="flex-shrink-0 w-16 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
+                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex items-center justify-center overflow-hidden">
+                  <ContentManagementAnimation />
+                </div>
               </div>
             </motion.div>
+
+            {/* Bartender Friend */}
+            <motion.a
+              href="https://bartender-friend.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="block group"
+            >
+              <div className="flex items-start gap-4 p-4 border border-current/20 bg-muted/5 hover:bg-muted/10 hover:border-current/30 transition-all cursor-pointer">
+                <div className="flex-shrink-0 w-12 h-12 border border-current/20 bg-primary/10 flex items-center justify-center font-mono text-xs">
+                  BF
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-sm font-mono font-semibold text-text group-hover:text-primary transition-colors">
+                      bartenderFriend
+                    </h3>
+                    <span className="text-xs font-mono text-secondary">→</span>
+                  </div>
+                  <p className="text-xs font-mono text-secondary leading-relaxed">
+                    A pocket reference for classic recipes, modern techniques, and industry standards.
+                    Build faster, smarter, and with confidence.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      COCKTAILS
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      RECIPES
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      TRAINING
+                    </span>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex items-center justify-center overflow-hidden">
+                  <BartenderFriendAnimation />
+                </div>
+              </div>
+            </motion.a>
           </div>
         </Panel>
 
@@ -204,7 +208,7 @@ export default function StudioLabPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-3 p-3 border border-current/10 bg-muted/5">
                     <span className="text-xs font-mono text-secondary">01</span>
-                    <div>
+                    <div className="flex-1">
                       <p className="text-sm font-mono font-semibold text-text">
                         MOTION TRACKING
                       </p>
@@ -212,16 +216,22 @@ export default function StudioLabPage() {
                         Interactive motion tracking experiments
                       </p>
                     </div>
+                    <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex items-center justify-center overflow-hidden">
+                      <MotionTrackingAnimation />
+                    </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 border border-current/10 bg-muted/5">
                     <span className="text-xs font-mono text-secondary">02</span>
-                    <div>
+                    <div className="flex-1">
                       <p className="text-sm font-mono font-semibold text-text">
                         WEBGL EXPERIMENTS
                       </p>
                       <p className="text-xs font-mono text-secondary mt-1">
                         3D graphics and WebGL interactive experiences
                       </p>
+                    </div>
+                    <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex items-center justify-center overflow-hidden">
+                      <WebGLExperimentsAnimation />
                     </div>
                   </div>
                 </div>

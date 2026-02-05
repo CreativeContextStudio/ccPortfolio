@@ -4,6 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { StudioLabProject } from '../data/studioLabProjects';
 import { Button, Panel } from './ui';
+import {
+  ContentCreatorThemeCarousel,
+  ContentCreatorTimeline,
+  ContentManagementLifecycle,
+  ContentManagementCollab,
+} from './StudioLabAnimations';
 
 interface StudioLabDetailModalProps {
   project: StudioLabProject | null;
@@ -165,10 +171,28 @@ export default function StudioLabDetailModal({
                   </p>
                 </Panel>
 
-                {/* Image Placeholders */}
+                {/* Project-specific animations */}
                 <div className="my-6 flex gap-4">
-                  <div className="flex-1 h-48 border border-current/20 bg-muted/10" />
-                  <div className="flex-1 h-48 border border-current/20 bg-muted/10" />
+                  {project.id === 'contentCreator' && (
+                    <>
+                      <div className="flex-1 h-48 border border-current/20 bg-muted/10 overflow-hidden flex items-center justify-center">
+                        <ContentCreatorThemeCarousel />
+                      </div>
+                      <div className="flex-1 h-48 border border-current/20 bg-muted/10 overflow-hidden flex items-center justify-center">
+                        <ContentCreatorTimeline />
+                      </div>
+                    </>
+                  )}
+                  {project.id === 'contentManagement' && (
+                    <>
+                      <div className="flex-1 h-48 border border-current/20 bg-muted/10 overflow-hidden flex items-center justify-center">
+                        <ContentManagementLifecycle />
+                      </div>
+                      <div className="flex-1 h-48 border border-current/20 bg-muted/10 overflow-hidden flex items-center justify-center">
+                        <ContentManagementCollab />
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Tags */}

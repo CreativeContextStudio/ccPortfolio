@@ -55,3 +55,16 @@ Optional for features:
 **New page**: Create `app/[pagename]/page.tsx` (App Router convention).
 
 **New API route**: Create `app/api/[endpoint]/route.ts` with HTTP method handlers.
+
+**New SVG animation**: Follow `ANIMATION_GUIDE.md` for the Cold War aerospace aesthetic. Add components to `app/components/StudioLabAnimations.tsx` and keyframes to `app/globals.css`.
+
+## SVG Animations
+
+See `ANIMATION_GUIDE.md` for the complete style guide. Key points:
+
+- **Components:** `app/components/StudioLabAnimations.tsx`
+- **Keyframes:** `app/globals.css` under `/* Studio Lab Project Animations */`
+- **Sizes:** Card `viewBox="0 0 96 64"` | Detail modal `viewBox="0 0 300 192"`
+- **Colors:** Use only theme CSS variables (`var(--theme-primary)`, etc.)
+- **Accessibility:** Always include `@media (prefers-reduced-motion: reduce)` styles
+- **Performance:** Only animate `transform` and `opacity` (GPU-accelerated)
