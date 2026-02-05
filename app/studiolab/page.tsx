@@ -1,9 +1,27 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Panel } from '../components/ui';
+import StudioLabDetailModal from '../components/StudioLabDetailModal';
+import { studioLabProjects, StudioLabProject } from '../data/studioLabProjects';
 
 export default function StudioLabPage() {
+  const [selectedProject, setSelectedProject] = useState<StudioLabProject | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (projectId: string) => {
+    const project = studioLabProjects[projectId];
+    if (project) {
+      setSelectedProject(project);
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div
@@ -29,6 +47,7 @@ export default function StudioLabPage() {
         {/* Active Projects */}
         <Panel variant="bordered" headerVariant="primary" title="ACTIVE PROJECTS">
           <div className="space-y-4 py-6">
+            {/* Bartender Friend - TODO: Add entrance animation class */}
             <motion.a
               href="https://bartender-friend.vercel.app/"
               target="_blank"
@@ -50,7 +69,7 @@ export default function StudioLabPage() {
                     <span className="text-xs font-mono text-secondary">→</span>
                   </div>
                   <p className="text-xs font-mono text-secondary leading-relaxed">
-                    A pocket reference for classic recipes, modern techniques, and industry standards. 
+                    A pocket reference for classic recipes, modern techniques, and industry standards.
                     Build faster, smarter, and with confidence.
                   </p>
                   <div className="mt-2 flex flex-wrap gap-2">
@@ -65,8 +84,101 @@ export default function StudioLabPage() {
                     </span>
                   </div>
                 </div>
+                {/* TODO: Add project screenshot */}
+                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 flex items-center justify-center hidden sm:flex">
+                  <span className="text-xs font-mono text-secondary/50">IMG</span>
+                </div>
               </div>
             </motion.a>
+
+            {/* Content Creator - TODO: Add entrance animation class */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="block group cursor-pointer"
+              onClick={() => handleOpenModal('contentCreator')}
+            >
+              <div className="flex items-start gap-4 p-4 border border-current/20 bg-muted/5 hover:bg-muted/10 hover:border-current/30 transition-all">
+                <div className="flex-shrink-0 w-12 h-12 border border-current/20 bg-primary/10 flex items-center justify-center font-mono text-xs">
+                  CC
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-sm font-mono font-semibold text-text group-hover:text-primary transition-colors">
+                      contentCreator
+                    </h3>
+                    <span className="text-xs font-mono text-secondary/50">IN DEV</span>
+                    <span className="text-xs font-mono text-secondary opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  </div>
+                  <p className="text-xs font-mono text-secondary leading-relaxed">
+                    Professional social media content creation app with broadcast-quality GFX overlays,
+                    25+ themes, 50+ animation presets, and batch export for images and video.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      CONTENT
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      GFX
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      VIDEO
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      THEMES
+                    </span>
+                  </div>
+                </div>
+                {/* TODO: Add project screenshot */}
+                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
+                {/* TODO: Add CSS animation */}
+                <div className="flex-shrink-0 w-16 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
+              </div>
+            </motion.div>
+
+            {/* Content Management Platform - TODO: Add entrance animation class */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="block group cursor-pointer"
+              onClick={() => handleOpenModal('contentManagement')}
+            >
+              <div className="flex items-start gap-4 p-4 border border-current/20 bg-muted/5 hover:bg-muted/10 hover:border-current/30 transition-all">
+                <div className="flex-shrink-0 w-12 h-12 border border-current/20 bg-primary/10 flex items-center justify-center font-mono text-xs">
+                  CM
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-sm font-mono font-semibold text-text group-hover:text-primary transition-colors">
+                      contentManagement
+                    </h3>
+                    <span className="text-xs font-mono text-secondary/50">~40-55%</span>
+                    <span className="text-xs font-mono text-secondary opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  </div>
+                  <p className="text-xs font-mono text-secondary leading-relaxed">
+                    AI-powered production management platform with multi-brand support,
+                    episode lifecycle tracking, Claude-generated guides, and real-time collaboration.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      AI
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      PRODUCTION
+                    </span>
+                    <span className="text-xs font-mono text-secondary/70 px-2 py-0.5 border border-current/10">
+                      COLLABORATION
+                    </span>
+                  </div>
+                </div>
+                {/* TODO: Add project screenshot */}
+                <div className="flex-shrink-0 w-24 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
+                {/* TODO: Add CSS animation */}
+                <div className="flex-shrink-0 w-16 h-16 border border-current/20 bg-muted/10 hidden sm:flex" />
+              </div>
+            </motion.div>
           </div>
         </Panel>
 
@@ -124,6 +236,13 @@ export default function StudioLabPage() {
           </div>
         </Panel>
       </motion.div>
+
+      {/* Project Detail Modal */}
+      <StudioLabDetailModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 }
