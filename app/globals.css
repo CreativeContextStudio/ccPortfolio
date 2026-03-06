@@ -225,8 +225,8 @@
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
+  filter: blur(60px);
+  opacity: 0.55;
   pointer-events: none;
   will-change: transform;
 }
@@ -506,7 +506,7 @@
    Overprint Effect on Gradient Text (Phase 4a)
    ============================================ */
 .gradient-text {
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 
 [data-mode="dark"] .gradient-text {
@@ -647,7 +647,7 @@
   top: 15%;
   left: 0;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.7;
   animation: satelliteDrift 30s linear 2s infinite;
   will-change: transform;
   z-index: 1;
@@ -678,7 +678,7 @@
   top: 12%;
   left: 0;
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.65;
   color: var(--ltx-muted);
   animation: birdFly 22s linear 3s infinite;
   will-change: transform;
@@ -692,7 +692,7 @@
 /* --- Shooting Star (About) --- */
 @keyframes shootingStar {
   0%, 80%  { transform: translate(0, 0) rotate(-25deg); opacity: 0; }
-  83%      { opacity: 0.9; }
+  83%      { opacity: 0.95; }
   100%     { transform: translate(-50vw, 35vh) rotate(-25deg); opacity: 0; }
 }
 
@@ -765,7 +765,7 @@ body.modal-open {
 @media (max-width: 639px) {
   .section-illustration {
     max-height: 120px;
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 
@@ -797,7 +797,7 @@ body.modal-open {
 }
 @keyframes cp-rec-pulse {
   0%, 100% { opacity: 1; }
-  50%      { opacity: 0.2; }
+  50%      { opacity: 0.4; }
 }
 @keyframes cp-timecode-tick {
   0%   { opacity: 1; }
@@ -805,11 +805,11 @@ body.modal-open {
   100% { opacity: 1; }
 }
 @keyframes cp-registration-breathe {
-  0%, 100% { opacity: 0.6; }
-  50%      { opacity: 0.25; }
+  0%, 100% { opacity: 0.75; }
+  50%      { opacity: 0.45; }
 }
 @keyframes cp-storyboard-wipe {
-  0%, 100% { opacity: 0.5; }
+  0%, 100% { opacity: 0.7; }
   50%      { opacity: 1; }
 }
 @keyframes cp-storyboard-progress {
@@ -817,8 +817,8 @@ body.modal-open {
   100% { width: 300px; }
 }
 @keyframes cp-swatch-pulse {
-  0%, 100% { opacity: 0.25; transform: scale(1); }
-  50%      { opacity: 0.45; transform: scale(1.03); }
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.75; transform: scale(1.03); }
 }
 
 /* --- Agentic Creative & AI keyframes (ac-) --- */
@@ -831,7 +831,7 @@ body.modal-open {
   100% { stroke-dashoffset: 0; }
 }
 @keyframes ac-node-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
+  0%, 100% { transform: scale(1); opacity: 0.9; }
   50%      { transform: scale(1.05); opacity: 1; }
 }
 @keyframes ac-token-scroll {
@@ -840,32 +840,32 @@ body.modal-open {
 }
 @keyframes ac-output-reveal-1 {
   0%, 20%  { opacity: 0; }
-  25%, 30% { opacity: 0.5; }
+  25%, 30% { opacity: 0.8; }
   35%, 100%{ opacity: 0; }
 }
 @keyframes ac-output-reveal-2 {
   0%, 50%  { opacity: 0; }
-  55%, 60% { opacity: 0.5; }
+  55%, 60% { opacity: 0.8; }
   65%, 100%{ opacity: 0; }
 }
 @keyframes ac-output-reveal-3 {
   0%, 75%  { opacity: 0; }
-  80%, 85% { opacity: 0.5; }
+  80%, 85% { opacity: 0.8; }
   90%, 100%{ opacity: 0; }
 }
 @keyframes ac-cursor-blink {
-  0%, 49%  { opacity: 0.6; }
+  0%, 49%  { opacity: 0.8; }
   50%, 100%{ opacity: 0; }
 }
 @keyframes ac-prompt-type {
   0%   { opacity: 0; }
-  5%   { opacity: 0.6; }
-  95%  { opacity: 0.6; }
+  5%   { opacity: 0.85; }
+  95%  { opacity: 0.85; }
   100% { opacity: 0; }
 }
 @keyframes ac-output-line {
   0%, 30%  { opacity: 0; }
-  40%, 80% { opacity: 0.4; }
+  40%, 80% { opacity: 0.7; }
   90%, 100%{ opacity: 0; }
 }
 @keyframes ac-gauge-sweep {
@@ -888,21 +888,21 @@ body.modal-open {
   50%      { stroke-dasharray: 170 18; }
 }
 @keyframes lp-location-ping {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50%      { transform: scale(1.3); opacity: 0.4; }
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%      { transform: scale(1.3); opacity: 0.6; }
 }
 @keyframes lp-gantt-shimmer {
-  0%, 100% { opacity: 0.02; }
-  50%      { opacity: 0.06; }
+  0%, 100% { opacity: 0.06; }
+  50%      { opacity: 0.14; }
 }
 @keyframes lp-crew-tick {
   0%   { opacity: 1; }
-  50%  { opacity: 0.7; }
+  50%  { opacity: 0.85; }
   100% { opacity: 1; }
 }
 @keyframes lp-progress-fill {
-  0%, 100% { opacity: 0.3; }
-  50%      { opacity: 0.5; }
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.75; }
 }
 @keyframes lp-dependency-flow {
   0%   { stroke-dashoffset: 4; }
@@ -910,7 +910,7 @@ body.modal-open {
 }
 @keyframes lp-check-appear {
   0%, 10%  { opacity: 0; }
-  20%, 85% { opacity: 0.7; }
+  20%, 85% { opacity: 0.9; }
   95%, 100%{ opacity: 0; }
 }
 
@@ -929,8 +929,8 @@ body.modal-open {
 
 /* #1 Brand Campaigns — tile pulse wave */
 @keyframes ha-tile-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.15; }
-  50%      { transform: scale(1.04); opacity: 0.28; }
+  0%, 100% { transform: scale(1); opacity: 0.45; }
+  50%      { transform: scale(1.04); opacity: 0.7; }
 }
 
 /* #2 Narrative Film — filmstrip horizontal scroll */
@@ -959,13 +959,13 @@ body.modal-open {
 
 /* #4 World Map — location ping */
 @keyframes ha-location-ping {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50%      { transform: scale(1.15); opacity: 0.4; }
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%      { transform: scale(1.15); opacity: 0.6; }
 }
 
 /* #4 World Map — ring expand */
 @keyframes ha-ring-expand {
-  0%   { transform: scale(1); opacity: 0.4; }
+  0%   { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(2.5); opacity: 0; }
 }
 
@@ -977,7 +977,7 @@ body.modal-open {
 
 /* #5 Broadcast — signal pulse */
 @keyframes ha-signal-pulse {
-  0%   { transform: scale(1); opacity: 0.3; }
+  0%   { transform: scale(1); opacity: 0.5; }
   100% { transform: scale(1.5); opacity: 0; }
 }
 
@@ -992,13 +992,13 @@ body.modal-open {
 @keyframes ha-slide-shuffle {
   0%, 100% { transform: translateY(0) scale(1); opacity: 0.9; }
   33%      { transform: translateY(-6px) scale(1.02); opacity: 1; }
-  66%      { transform: translateY(4px) scale(0.98); opacity: 0.7; }
+  66%      { transform: translateY(4px) scale(0.98); opacity: 0.85; }
 }
 
 /* #7 Timeline — keyframe diamond pulse (rotate(45deg) with unit) */
 @keyframes ha-keyframe-pulse {
-  0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.6; }
-  50%      { transform: rotate(45deg) scale(1.3); opacity: 0.9; }
+  0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.75; }
+  50%      { transform: rotate(45deg) scale(1.3); opacity: 1; }
 }
 
 /* #7 Timeline — playhead sweep */
@@ -1021,21 +1021,21 @@ body.modal-open {
 
 /* #8 Wireframe Cube — vertex glow */
 @keyframes ha-vertex-glow {
-  0%, 100% { opacity: 0.3; }
-  50%      { opacity: 0.8; }
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 0.9; }
 }
 
 /* #9 Type Specimen — swatch pulse */
 @keyframes ha-swatch-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.25; }
-  50%      { transform: scale(1.05); opacity: 0.45; }
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50%      { transform: scale(1.05); opacity: 0.75; }
 }
 
 /* #9 Type Specimen — type reveal */
 @keyframes ha-type-reveal {
   0%   { transform: translateX(-8px); opacity: 0; }
-  15%  { transform: translateX(0); opacity: 0.25; }
-  85%  { transform: translateX(0); opacity: 0.25; }
+  15%  { transform: translateX(0); opacity: 0.55; }
+  85%  { transform: translateX(0); opacity: 0.55; }
   100% { transform: translateX(8px); opacity: 0; }
 }
 
@@ -1047,21 +1047,21 @@ body.modal-open {
 
 /* #10 Pipeline — stage active fill */
 @keyframes ha-stage-active {
-  0%, 100% { opacity: 0.05; }
-  50%      { opacity: 0.15; }
+  0%, 100% { opacity: 0.15; }
+  50%      { opacity: 0.35; }
 }
 
 /* #11 Org Chart — cascade pulse */
 @keyframes ha-org-pulse {
-  0%, 100% { opacity: 0.5; }
-  50%      { opacity: 0.9; }
+  0%, 100% { opacity: 0.65; }
+  50%      { opacity: 1; }
 }
 
 /* #12 Circuit Board — node blink */
 @keyframes ha-node-blink {
-  0%, 30%  { opacity: 0.5; }
-  33%, 60% { opacity: 0.15; }
-  63%, 100%{ opacity: 0.5; }
+  0%, 30%  { opacity: 0.7; }
+  33%, 60% { opacity: 0.35; }
+  63%, 100%{ opacity: 0.7; }
 }
 
 /* #12 Circuit Board — chip glow */
@@ -1078,22 +1078,22 @@ body.modal-open {
   @keyframes ha-hex-glow { 0%, 100% { filter: none; } }
   @keyframes ha-node-float { 0%, 100% { transform: scale(1); } }
   @keyframes ha-location-ping { 0%, 100% { transform: scale(1); } }
-  @keyframes ha-ring-expand { 0%, 100% { transform: scale(1); opacity: 0.2; } }
+  @keyframes ha-ring-expand { 0%, 100% { transform: scale(1); opacity: 0.3; } }
   @keyframes ha-color-bars { 0%, 100% { transform: translateX(0); } }
-  @keyframes ha-signal-pulse { 0%, 100% { transform: scale(1); opacity: 0.2; } }
+  @keyframes ha-signal-pulse { 0%, 100% { transform: scale(1); opacity: 0.3; } }
   @keyframes ha-live-blink { 0%, 100% { opacity: 1; } }
   @keyframes ha-slide-shuffle { 0%, 100% { transform: none; } }
   @keyframes ha-keyframe-pulse { 0%, 100% { transform: rotate(45deg) scale(1); } }
   @keyframes ha-playhead-sweep { 0%, 100% { transform: translateX(0); } }
   @keyframes ha-cube-a { 0%, 100% { opacity: 1; } }
   @keyframes ha-cube-b { 0%, 100% { opacity: 0; } }
-  @keyframes ha-vertex-glow { 0%, 100% { opacity: 0.5; } }
+  @keyframes ha-vertex-glow { 0%, 100% { opacity: 0.55; } }
   @keyframes ha-swatch-pulse { 0%, 100% { transform: scale(1); } }
-  @keyframes ha-type-reveal { 0%, 100% { transform: translateX(0); opacity: 0.25; } }
+  @keyframes ha-type-reveal { 0%, 100% { transform: translateX(0); opacity: 0.55; } }
   @keyframes ha-pipeline-flow { 0%, 100% { stroke-dashoffset: 0; } }
-  @keyframes ha-stage-active { 0%, 100% { opacity: 0.05; } }
-  @keyframes ha-org-pulse { 0%, 100% { opacity: 0.5; } }
-  @keyframes ha-node-blink { 0%, 100% { opacity: 0.5; } }
+  @keyframes ha-stage-active { 0%, 100% { opacity: 0.15; } }
+  @keyframes ha-org-pulse { 0%, 100% { opacity: 0.65; } }
+  @keyframes ha-node-blink { 0%, 100% { opacity: 0.7; } }
   @keyframes ha-chip-glow { 0%, 100% { filter: none; } }
 }
 

@@ -104,7 +104,7 @@ export function Hero() {
         {/* Left: Title + Typing command */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <div className="hero-title-wrap">
-            <h1 className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[0.95]">
+            <h1 className="font-[family-name:var(--font-display)] text-[2.5rem] sm:text-7xl md:text-8xl font-bold tracking-tight leading-[0.95]">
               <motion.span
                 className="gradient-text block"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}

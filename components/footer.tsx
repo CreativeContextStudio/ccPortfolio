@@ -108,7 +108,7 @@ function UnravelHeading() {
 
   return (
     <div ref={ref} className="text-center">
-      <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-bold text-ltx-black inline-block">
+      <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-ltx-black inline-block">
         {UNRAVEL_TEXT.split("").map((char, i) => {
           const h = stableHash(UNRAVEL_TEXT + i);
           const initRotate = ((h % 40) - 20) / 10;
@@ -122,7 +122,7 @@ function UnravelHeading() {
               animate={isInView ? { rotate: 0, y: 0 } : { rotate: initRotate, y: initY }}
               transition={{ duration: 0.6, delay: i * 0.03, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
-              {char === " " ? "\u00A0" : char}
+              {char === " " ? " " : char}
             </motion.span>
           );
         })}
