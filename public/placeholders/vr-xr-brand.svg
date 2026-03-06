@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="50%" stop-color="#0d0a2e"/>
+      <stop offset="100%" stop-color="#1a0533"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="scanline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Ambient orbs -->
+  <ellipse cx="200" cy="337" rx="350" ry="350" fill="url(#orb1)"/>
+  <ellipse cx="1050" cy="300" rx="280" ry="280" fill="url(#orb2)"/>
+
+  <!-- Perspective grid floor -->
+  <g stroke="#a855f7" stroke-width="0.6" opacity="0.12">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="580" x2="1200" y2="580"/>
+    <line x1="100" y1="530" x2="1100" y2="530"/>
+    <line x1="220" y1="490" x2="980" y2="490"/>
+    <line x1="320" y1="458" x2="880" y2="458"/>
+    <line x1="400" y1="434" x2="800" y2="434"/>
+    <!-- Vertical lines converging to vanishing point -->
+    <line x1="600" y1="434" x2="0" y2="675"/>
+    <line x1="600" y1="434" x2="200" y2="675"/>
+    <line x1="600" y1="434" x2="400" y2="675"/>
+    <line x1="600" y1="434" x2="600" y2="675"/>
+    <line x1="600" y1="434" x2="800" y2="675"/>
+    <line x1="600" y1="434" x2="1000" y2="675"/>
+    <line x1="600" y1="434" x2="1200" y2="675"/>
+  </g>
+
+  <!-- VR Headset outline (center) -->
+  <g transform="translate(560, 120)" opacity="0.9">
+    <!-- Headset body -->
+    <rect x="0" y="30" width="160" height="90" rx="18" fill="none" stroke="url(#accent)" stroke-width="2.5"/>
+    <!-- Left lens -->
+    <ellipse cx="38" cy="75" rx="24" ry="28" fill="url(#visor)" stroke="#a855f7" stroke-width="1.5"/>
+    <!-- Right lens -->
+    <ellipse cx="122" cy="75" rx="24" ry="28" fill="url(#visor)" stroke="#6366f1" stroke-width="1.5"/>
+    <!-- Bridge -->
+    <line x1="62" y1="75" x2="98" y2="75" stroke="#a855f7" stroke-width="1.5" opacity="0.6"/>
+    <!-- Strap left -->
+    <path d="M0 50 Q-30 50 -35 75 Q-30 100 0 100" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+    <!-- Strap right -->
+    <path d="M160 50 Q190 50 195 75 Q190 100 160 100" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+    <!-- Scanline sweep -->
+    <rect x="14" y="47" width="132" height="4" rx="2" fill="url(#scanline)" opacity="0.7"/>
+    <!-- Status dots -->
+    <circle cx="70" cy="15" r="3" fill="#a855f7" opacity="0.8"/>
+    <circle cx="80" cy="15" r="3" fill="#6366f1" opacity="0.6"/>
+    <circle cx="90" cy="15" r="3" fill="#38bdf8" opacity="0.5"/>
+  </g>
+
+  <!-- Left text block -->
+  <rect x="80" y="270" width="140" height="3" rx="2" fill="url(#accent)"/>
+  <text x="80" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" fill="white" opacity="0.95" letter-spacing="-1">VR / XR</text>
+  <text x="80" y="415" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" fill="white" opacity="0.95" letter-spacing="-1">Brand</text>
+  <text x="82" y="462" font-family="system-ui, sans-serif" font-size="17" font-weight="400" fill="#a855f7" opacity="0.9" letter-spacing="6">IMMERSIVE EXPERIENCES</text>
+
+  <!-- Right side callout -->
+  <g opacity="0.75">
+    <rect x="820" y="290" width="1" height="70" fill="#38bdf8" opacity="0.5"/>
+    <text x="840" y="328" font-family="Georgia, serif" font-size="44" font-weight="700" fill="white">Game</text>
+    <text x="840" y="368" font-family="Georgia, serif" font-size="44" font-weight="700" fill="#38bdf8">Engine</text>
+    <text x="841" y="392" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.4" letter-spacing="3">POWERED</text>
+  </g>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="650" width="1200" height="2" fill="url(#accent)" opacity="0.3"/>
+
+  <!-- Corner decorations -->
+  <g stroke="#a855f7" stroke-width="1.5" opacity="0.3" fill="none">
+    <polyline points="40,40 40,20 60,20"/>
+    <polyline points="1160,40 1160,20 1140,20"/>
+    <polyline points="40,635 40,655 60,655"/>
+    <polyline points="1160,635 1160,655 1140,655"/>
+  </g>
+</svg>

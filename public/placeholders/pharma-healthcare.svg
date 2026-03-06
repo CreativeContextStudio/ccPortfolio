@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="60%" stop-color="#0f2044"/>
+      <stop offset="100%" stop-color="#1a3a6b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="0" y1="135" x2="1200" y2="135"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="240" y1="0" x2="240" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+
+  <!-- Ambient orb -->
+  <ellipse cx="900" cy="200" rx="400" ry="400" fill="url(#orb)"/>
+
+  <!-- Accent bar -->
+  <rect x="80" y="260" width="160" height="3" rx="2" fill="url(#accent)"/>
+
+  <!-- Cross / plus mark -->
+  <g opacity="0.9">
+    <rect x="83" y="170" width="8" height="60" rx="4" fill="url(#accent)"/>
+    <rect x="63" y="190" width="48" height="8" rx="4" fill="url(#accent)"/>
+  </g>
+
+  <!-- Main headline -->
+  <text x="80" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="white" opacity="0.95" letter-spacing="-1">Healthcare</text>
+  <text x="80" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="white" opacity="0.95" letter-spacing="-1">&amp; Pharma</text>
+
+  <!-- Sub label -->
+  <text x="82" y="476" font-family="system-ui, sans-serif" font-size="18" font-weight="400" fill="#60a5fa" opacity="0.9" letter-spacing="6">BRAND CAMPAIGNS</text>
+
+  <!-- Right side stats -->
+  <g opacity="0.7">
+    <!-- Stat 1 -->
+    <rect x="760" y="200" width="1" height="80" fill="#3b82f6" opacity="0.6"/>
+    <text x="780" y="240" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Fortune</text>
+    <text x="780" y="280" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#60a5fa">500</text>
+    <text x="781" y="308" font-family="system-ui, sans-serif" font-size="13" fill="white" opacity="0.45" letter-spacing="3">CLIENTS</text>
+
+    <!-- Stat 2 -->
+    <rect x="760" y="360" width="1" height="80" fill="#06b6d4" opacity="0.6"/>
+    <text x="780" y="400" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Multi</text>
+    <text x="780" y="440" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#06b6d4">Platform</text>
+    <text x="781" y="468" font-family="system-ui, sans-serif" font-size="13" fill="white" opacity="0.45" letter-spacing="3">REACH</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="650" width="1200" height="2" fill="url(#accent)" opacity="0.3"/>
+</svg>

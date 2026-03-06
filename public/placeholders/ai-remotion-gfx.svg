@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060612"/>
+      <stop offset="50%" stop-color="#0e0820"/>
+      <stop offset="100%" stop-color="#130528"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="300" cy="400" rx="400" ry="300" fill="url(#glow1)"/>
+  <ellipse cx="1000" cy="250" rx="350" ry="300" fill="url(#glow2)"/>
+
+  <!-- Timeline track (horizontal bar) -->
+  <rect x="80" y="430" width="680" height="2" rx="1" fill="white" opacity="0.08"/>
+
+  <!-- Playhead -->
+  <rect x="310" y="415" width="2" height="32" rx="1" fill="#f59e0b" opacity="0.9"/>
+  <polygon points="307,413 313,413 310,408" fill="#f59e0b" opacity="0.9"/>
+
+  <!-- Timeline clips -->
+  <rect x="85" y="410" width="120" height="18" rx="3" fill="#f59e0b" opacity="0.25"/>
+  <rect x="215" y="410" width="90" height="18" rx="3" fill="#ef4444" opacity="0.25"/>
+  <rect x="315" y="410" width="140" height="18" rx="3" fill="#8b5cf6" opacity="0.25"/>
+  <rect x="465" y="410" width="80" height="18" rx="3" fill="#06b6d4" opacity="0.25"/>
+  <rect x="555" y="410" width="110" height="18" rx="3" fill="#f59e0b" opacity="0.2"/>
+
+  <!-- Audio waveform row -->
+  <g opacity="0.4">
+    <rect x="85" y="436" width="580" height="10" rx="2" fill="none" stroke="#8b5cf6" stroke-width="0.5"/>
+    <!-- Waveform bars -->
+    <rect x="90" y="438" width="2" height="6" fill="#8b5cf6"/>
+    <rect x="95" y="437" width="2" height="8" fill="#8b5cf6"/>
+    <rect x="100" y="439" width="2" height="4" fill="#8b5cf6"/>
+    <rect x="105" y="436" width="2" height="10" fill="#8b5cf6"/>
+    <rect x="110" y="438" width="2" height="6" fill="#8b5cf6"/>
+    <rect x="115" y="437" width="2" height="8" fill="#8b5cf6"/>
+    <rect x="120" y="440" width="2" height="3" fill="#8b5cf6"/>
+    <rect x="125" y="436" width="2" height="10" fill="#8b5cf6"/>
+    <rect x="130" y="439" width="2" height="5" fill="#8b5cf6"/>
+    <rect x="135" y="437" width="2" height="8" fill="#8b5cf6"/>
+    <rect x="140" y="436" width="2" height="10" fill="#8b5cf6"/>
+    <rect x="145" y="438" width="2" height="6" fill="#8b5cf6"/>
+  </g>
+
+  <!-- Animated bars (motion GFX visualization) right side -->
+  <g transform="translate(820, 180)">
+    <text x="0" y="-14" font-family="system-ui, monospace" font-size="10" fill="white" opacity="0.3" letter-spacing="3">RENDER OUTPUT</text>
+    <!-- Bar chart representing video frames -->
+    <rect x="0"   y="160" width="28" height="80"  rx="3" fill="url(#bar1)" opacity="0.85"/>
+    <rect x="38"  y="110" width="28" height="130" rx="3" fill="url(#bar2)" opacity="0.85"/>
+    <rect x="76"  y="60"  width="28" height="180" rx="3" fill="url(#bar3)" opacity="0.85"/>
+    <rect x="114" y="90"  width="28" height="150" rx="3" fill="url(#bar4)" opacity="0.85"/>
+    <rect x="152" y="130" width="28" height="110" rx="3" fill="url(#bar1)" opacity="0.85"/>
+    <rect x="190" y="80"  width="28" height="160" rx="3" fill="url(#bar2)" opacity="0.85"/>
+    <rect x="228" y="100" width="28" height="140" rx="3" fill="url(#bar3)" opacity="0.85"/>
+    <!-- Baseline -->
+    <rect x="0" y="242" width="256" height="1" fill="white" opacity="0.1"/>
+  </g>
+
+  <!-- Main headline -->
+  <rect x="80" y="240" width="130" height="3" rx="2" fill="url(#accent)"/>
+  <text x="80" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700" fill="white" opacity="0.95" letter-spacing="-1">Agentic</text>
+  <text x="80" y="385" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700" fill="white" opacity="0.95" letter-spacing="-1">Motion GFX</text>
+  <text x="82" y="468" font-family="system-ui, sans-serif" font-size="15" font-weight="400" fill="#f59e0b" opacity="0.85" letter-spacing="5">PROMPT · GENERATE · RENDER</text>
+
+  <!-- Stack pills -->
+  <g font-family="system-ui, monospace" font-size="11" letter-spacing="1">
+    <rect x="82" y="492" width="82" height="22" rx="11" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="123" y="507" text-anchor="middle" fill="#f59e0b" opacity="0.8">REMOTION</text>
+
+    <rect x="174" y="492" width="62" height="22" rx="11" fill="#8b5cf6" fill-opacity="0.12" stroke="#8b5cf6" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="205" y="507" text-anchor="middle" fill="#8b5cf6" opacity="0.8">REACT</text>
+
+    <rect x="246" y="492" width="82" height="22" rx="11" fill="#06b6d4" fill-opacity="0.12" stroke="#06b6d4" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="287" y="507" text-anchor="middle" fill="#06b6d4" opacity="0.8">ELEVENLABS</text>
+  </g>
+
+  <!-- Corner brackets -->
+  <g stroke="white" stroke-width="1.5" opacity="0.15" fill="none">
+    <polyline points="40,40 40,20 60,20"/>
+    <polyline points="1160,40 1160,20 1140,20"/>
+    <polyline points="40,635 40,655 60,655"/>
+    <polyline points="1160,635 1160,655 1140,655"/>
+  </g>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="650" width="1200" height="2" rx="1" fill="url(#accent)" opacity="0.35"/>
+</svg>
